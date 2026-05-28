@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/seed/foodSeed.js",
+    "seed:restaurants": "node src/seed/restaurantSeed.js",
+    "seed:hero": "node src/seed/heroSeed.js",
+    "seed:categories": "node src/seed/categorySeed.js",
+    "seed:offers": "node src/seed/offerSeed.js",
+    "seed:banners": "node src/seed/bannerSeed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "jsonwebtoken": "latest",
+    "mongoose": "^7.8.9",
+    "razorpay": "^2.9.6",
+    "react-router-dom": "^7.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
