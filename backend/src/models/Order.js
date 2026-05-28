@@ -2,22 +2,17 @@ import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      default: null,
-    },
-
     customerName: {
       type: String,
-      required: true,
+      default: "Guest User",
     },
-
     phone: {
+      type: String,
+    },
+    address: {
       type: String,
       required: true,
     },
-
     items: [
       {
         name: String,
@@ -26,38 +21,13 @@ const orderSchema = new mongoose.Schema(
         quantity: Number,
       },
     ],
-
-    address: {
-      type: String,
-      required: true,
-    },
-
     total: {
       type: Number,
       required: true,
     },
-
-    paymentMethod: {
-      type: String,
-      enum: ["COD", "ONLINE"],
-      default: "COD",
-    },
-
-    paymentStatus: {
-      type: String,
-      enum: ["Pending", "Paid"],
-      default: "Pending",
-    },
-
     status: {
       type: String,
-      enum: [
-        "Order Placed",
-        "Preparing",
-        "Out for Delivery",
-        "Delivered",
-        "Canceled",
-      ],
+      enum: ["Order Placed", "Preparing", "Out for Delivery", "Delivered"],
       default: "Order Placed",
     },
   },

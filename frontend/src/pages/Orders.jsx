@@ -20,17 +20,6 @@ const steps = [
   { label: "Delivered", time: "30+ min", icon: Home },
 ];
 
-const getOrderStatus = (createdAt) => {
-  const minutes = Math.floor(
-    (Date.now() - new Date(createdAt).getTime()) / 60000
-  );
-
-  if (minutes < 10) return "Order Placed";
-  if (minutes < 20) return "Preparing";
-  if (minutes < 30) return "Out for Delivery";
-  return "Delivered";
-};
-
 const Orders = () => {
   const [orders, setOrders] = useState([]);
 
@@ -40,7 +29,7 @@ const Orders = () => {
     comment: "",
   });
 
-  useEffect(() => {
+  const fetchOrders = () => {
     fetch("http://localhost:5000/api/orders")
       .then((res) => res.json())
       .then((data) => {
@@ -50,6 +39,14 @@ const Orders = () => {
         console.log(error);
         setOrders([]);
       });
+  };
+
+  useEffect(() => {
+    fetchOrders();
+
+    const interval = setInterval(fetchOrders, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleSubmitReview = async (order) => {
@@ -96,7 +93,7 @@ const Orders = () => {
           <h1 className="text-3xl font-extrabold">Track Order</h1>
 
           <p className="text-slate-400 mt-2">
-            Your order status updates automatically with time.
+            Your order status updates when admin changes it.
           </p>
 
           {orders.length === 0 ? (
@@ -119,7 +116,8 @@ const Orders = () => {
           ) : (
             <div className="mt-8 space-y-6">
               {orders.map((order) => {
-                const currentStatus = getOrderStatus(order.createdAt);
+                const currentStatus = order.status || "Order Placed";
+
                 const activeIndex = steps.findIndex(
                   (step) => step.label === currentStatus
                 );
