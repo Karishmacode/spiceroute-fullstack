@@ -14,10 +14,10 @@ import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 
 const steps = [
-  { label: "Order Placed", time: "0-10 min", icon: PackageCheck },
-  { label: "Preparing", time: "10-20 min", icon: ChefHat },
-  { label: "Out for Delivery", time: "20-30 min", icon: Bike },
-  { label: "Delivered", time: "30+ min", icon: Home },
+  { label: "Order Placed", icon: PackageCheck },
+  { label: "Preparing",  icon: ChefHat },
+  { label: "Out for Delivery",  icon: Bike },
+  { label: "Delivered",  icon: Home },
 ];
 
 const Orders = () => {
