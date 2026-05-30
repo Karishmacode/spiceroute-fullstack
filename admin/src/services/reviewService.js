@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/reviews";
+const API_URL = "https://spiceroute-fullstack.onrender.com/api/reviews";
 
 export const getReviews = async () => {
   const res = await fetch(API_URL);

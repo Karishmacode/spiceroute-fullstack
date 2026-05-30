@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/banners";
+const API_URL = "https://spiceroute-fullstack.onrender.com/api/banners";
 
 export const getBanners = async () => {
   const res = await fetch(API_URL);

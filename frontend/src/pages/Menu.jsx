@@ -19,10 +19,10 @@ const Menu = () => {
   useEffect(() => {
     const url =
       category && category !== "All"
-        ? `http://localhost:5000/api/foods?category=${encodeURIComponent(
+        ? `https://spiceroute-fullstack.onrender.com/api/foods?category=${encodeURIComponent(
             category
           )}`
-        : "http://localhost:5000/api/foods";
+        : "https://spiceroute-fullstack.onrender.com/api/foods";
 
     fetch(url)
       .then((res) => res.json())

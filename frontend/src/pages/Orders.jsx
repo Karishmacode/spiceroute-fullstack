@@ -30,7 +30,7 @@ const Orders = () => {
   });
 
   const fetchOrders = () => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://spiceroute-fullstack.onrender.com/api/orders")
       .then((res) => res.json())
       .then((data) => {
         setOrders(Array.isArray(data) ? data : []);
@@ -56,7 +56,7 @@ const Orders = () => {
     }
 
     try {
-      await fetch("http://localhost:5000/api/reviews", {
+      await fetch("https://spiceroute-fullstack.onrender.com/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

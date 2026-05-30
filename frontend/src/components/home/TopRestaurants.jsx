@@ -8,7 +8,7 @@ const TopRestaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/restaurants")
+    fetch("https://spiceroute-fullstack.onrender.com/api/restaurants")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {

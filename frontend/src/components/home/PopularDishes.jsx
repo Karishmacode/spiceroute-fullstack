@@ -150,7 +150,7 @@ const PopularDishes = () => {
   const [dishes, setDishes] = useState([]);
   const [favourites, setFavourites] = useState([]);
 useEffect(() => {
-  fetch("http://localhost:5000/api/foods?limit=6")
+  fetch("https://spiceroute-fullstack.onrender.com/api/foods?limit=6")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);

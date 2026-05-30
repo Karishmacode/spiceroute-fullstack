@@ -23,7 +23,7 @@ const selectedLocation =
   useEffect(() => {
     const loadUserPhone = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/orders");
+        const res = await fetch("https://spiceroute-fullstack.onrender.com/api/orders");
         const data = await res.json();
 
         const orders = Array.isArray(data) ? data : [];

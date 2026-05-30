@@ -21,17 +21,17 @@ const Offers = () => {
   const [offerBanner, setOfferBanner] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/restaurants")
+    fetch("https://spiceroute-fullstack.onrender.com/api/restaurants")
       .then((res) => res.json())
       .then((data) => setRestaurants(Array.isArray(data) ? data : []))
       .catch(() => setRestaurants([]));
 
-    fetch("http://localhost:5000/api/foods")
+    fetch("https://spiceroute-fullstack.onrender.com/api/foods")
       .then((res) => res.json())
       .then((data) => setDishes(Array.isArray(data) ? data : []))
       .catch(() => setDishes([]));
 
-    fetch("http://localhost:5000/api/banners")
+    fetch("https://spiceroute-fullstack.onrender.com/api/banners")
       .then((res) => res.json())
       .then((data) => {
         const banner = data.find(

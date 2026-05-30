@@ -16,7 +16,7 @@ const Search = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/api/foods?search=${encodeURIComponent(query)}`
+      `https://spiceroute-fullstack.onrender.com/api/foods?search=${encodeURIComponent(query)}`
     )
       .then((res) => res.json())
       .then((data) => {

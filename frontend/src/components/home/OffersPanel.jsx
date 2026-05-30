@@ -9,7 +9,7 @@ const OffersPanel = () => {
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/offers")
+    fetch("https://spiceroute-fullstack.onrender.com/api/offers")
       .then((res) => res.json())
       .then((data) => {
         setOffers(Array.isArray(data) ? data : []);
@@ -19,7 +19,7 @@ const OffersPanel = () => {
         setOffers([]);
       });
 
-    fetch("http://localhost:5000/api/foods")
+    fetch("https://spiceroute-fullstack.onrender.com/api/foods")
       .then((res) => res.json())
       .then((data) => {
         setDishes(Array.isArray(data) ? data : []);

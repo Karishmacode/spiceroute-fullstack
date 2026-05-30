@@ -267,7 +267,7 @@
 //   const [restaurantDishes, setRestaurantDishes] = useState([]);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/api/restaurants/${slug}`)
+//     fetch(`https://spiceroute-fullstack.onrender.com/api/restaurants/${slug}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setRestaurant(data.restaurant);
@@ -470,7 +470,7 @@ const RestaurantDetails = () => {
   const [restaurantDishes, setRestaurantDishes] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/restaurants/${slug}`)
+    fetch(`https://spiceroute-fullstack.onrender.com/api/restaurants/${slug}`)
       .then((res) => res.json())
       .then((data) => {
         setRestaurant(data.restaurant);

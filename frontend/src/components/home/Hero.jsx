@@ -7,12 +7,12 @@ const Hero = () => {
   const [banner, setBanner] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/hero")
+    fetch("https://spiceroute-fullstack.onrender.com/api/hero")
       .then((res) => res.json())
       .then((data) => setHero(data))
       .catch((error) => console.log(error));
 
-    fetch("http://localhost:5000/api/banners")
+    fetch("https://spiceroute-fullstack.onrender.com/api/banners")
       .then((res) => res.json())
       .then((data) => {
         const activeHeroBanner = data.find(

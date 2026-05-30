@@ -4,7 +4,7 @@ import PageHeader from "../components/ui/PageHeader";
 import SearchInput from "../components/ui/SearchInput";
 import SimpleTable from "../components/tables/SimpleTable";
 
-const API_URL = "http://localhost:5000/api/reviews";
+const API_URL = "https://spiceroute-fullstack.onrender.com/api/reviews";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
